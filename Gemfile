@@ -7,6 +7,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'therubyracer'
 gem 'devise'
+gem 'transitions', :require => ['transitions', 'active_model/transitions']
 gem 'simple_form'
 gem 'cocoon'
 
