@@ -19,3 +19,4 @@
 # Ignore configurations
 /config/environments/*.rb
 /config/database.yml
+/config/initializers/devise.rb
