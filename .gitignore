@@ -16,6 +16,9 @@
 !/log/.keep
 /tmp
 
+# Ignore deployment gems
+/vendor/bundle
+
 # Ignore configurations
 /config/environments/*.rb
 /config/database.yml
