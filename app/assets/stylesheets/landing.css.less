@@ -36,194 +36,227 @@ fieldset[disabled] .btn-jomlaunch.active {
   border-color: #E91E63;
 }
 
+fieldset {
+	border-top: 1px solid #e5e5e5;
+	margin-top: 10px;
+	padding-top: 10px;
+
+	legend {
+		border: none;
+		width: auto;
+		border: none;
+		margin: 0;
+		padding-right: 10px;
+	}
+}
+
 body {
 	font-family: @font-stack;
-	.btn {
-		font-family: @font-header;
-		text-transform: uppercase;
-		font-weight: 500;
-		border:none;
-		border-radius: 100px;
-		font-size: 13px;
-		letter-spacing: 1px;
-		line-height: 1;
-		margin: 0 10px;
-		padding: 16px 40px;
-	}
+}
 
-	h1, h2, h3, h4, h5, h6, strong {
-		font-family: @font-header;
-		font-weight: 600;
-	}
+h1, h2, h3, h4, h5, h6, strong {
+	font-family: @font-header;
+	font-weight: 600;
+}
 
-	p.lead {
-		font-size: 18px;
-	}
+.btn {
+	font-family: @font-header;
+	text-transform: uppercase;
+	font-weight: 500;
+	border:none;
+	border-radius: 100px;
+	font-size: 13px;
+	letter-spacing: 1px;
+	line-height: 1;
+	padding: 16px 40px;
+}
 
-	#header {
-		background: asset-url('header.jpg');
-		background-size: cover;
-		background-position: bottom;
-		padding: 70px 0 150px;
-		color: #fff;
+p.lead {
+	font-size: 18px;
+}
 
-		.content {
-			padding:0 10%;
-			img {
-				clear: both;
-				display: block;
-				margin: 0 auto 20px;
-			}
-			.logo {
-				width: 200px;
-				height: auto;
-			}
-			h1 {
-				font-size: 48px;
-			}
-			h3 {
-				font-weight: 500;
-				margin:15px 0;
-			}
-			p {
-				font-weight: 300;
-				font-size: 16px;
-				line-height: 1.5;
-				color: rgba(255,255,255,0.8);
-				margin-bottom: 25px;
-			}
+#header {
+	background: asset-url('header.jpg');
+	background-size: cover;
+	background-position: bottom;
+	padding: 70px 0 150px;
+	color: #fff;
+
+	.content {
+		padding:0 10%;
+		img {
+			clear: both;
+			display: block;
+			margin: 0 auto 20px;
 		}
-	}
-
-	#categories {
-		padding: 100px 0;
-		.items {
-			margin-top: 30px;
-			.item {
-				padding:0 25px;
-				.thumb {
-					height: 60px;
-					margin:0 0 10px;
-				}
-				h4 {
-					text-transform: uppercase;
-				}
-				p {
-					font-size: 14px;
-					font-weight: 300;
-				}
-			}
+		.logo {
+			width: 200px;
+			height: auto;
 		}
-		
-	}
-
-	#program {
-		padding:50px 0;
-		position: relative;
-		height: 750px;
-		background: #44CCEC;
-		color: rgba(0,0,0,0.5);
-
-		#map {
-			width: 50%;
-			//border-radius: 15px;
-			overflow: hidden;
-			position: absolute;
-			top:0;
-			left:0;
-			bottom:0;
+		h1 {
+			font-size: 48px;
 		}
-
-		.content {
-			padding-left:50px;
-			.title {
-				margin:0 0 30px;
-				font-size: 36px;
-				text-transform: uppercase;
-				.icon {
-					opacity: 0.6;
-					margin-right: 10px;
-				}
-			}
-			.list {
-				li {
-					//font-family: @font-header;
-					//text-transform: uppercase;
-					//letter-spacing: 0.5px;
-					font-size: 14px;
-					padding:10px 0;
-					font-weight: 600;
-					border-bottom: dashed rgba(0,0,0,0.1) 1px;
-					.time {
-						width: 80px;
-						display: inline-block;
-						font-weight: normal;
-						font-size: 12px;
-						opacity: 0.8;
-					}
-					&:last-child {
-						border:none;
-					}
-				}
-			}
+		h3 {
+			font-weight: 500;
+			margin:15px 0;
 		}
-	}
-
-	#sponsors {
-		background: #fff;
-		padding:50px 0 20px;
-		border-bottom: #eee solid 1px;
-
-		.sponsor-list {
-			.col-md-4 {
-				margin-bottom: 30px;
-				img {
-					width: 100%;
-					height: auto;
-				}
-			}
-		}
-	}
-
-	#cta {
-		padding: 100px;
-		h2 {
-			text-transform: uppercase;
-			margin-bottom: 30px;
-			font-size: 24px;
+		p {
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 1.5;
+			color: rgba(255,255,255,0.8);
+			margin-bottom: 25px;
 		}
 		.btn {
-			font-size: 18px;
-			padding:20px 50px;
+			margin: 0 10px;
 		}
 	}
+}
 
-	#credits {
-		background: #eee;
-		padding:10px;
-		color: rgba(0,0,0,0.5);
-		font-family: @font-header;
-		font-weight: 500;
-		font-size: 11px;
+#header-short {
+	background: asset-url('header.jpg');
+	background-size: cover;
+	background-position: center;
+	padding: 50px 0;
+	.logo-jomweb {
+		height: 100px;
+	}
+	.btn {
+		margin: 30px 0 0 20px;
+	}
+}
+
+#categories {
+	padding: 100px 0;
+	.items {
+		margin-top: 30px;
+		.item {
+			padding:0 25px;
+			.thumb {
+				height: 60px;
+				margin:0 0 10px;
+			}
+			h4 {
+				text-transform: uppercase;
+			}
+			p {
+				font-size: 14px;
+				font-weight: 300;
+			}
+		}
+	}
+	
+}
+
+#program {
+	padding:50px 0;
+	position: relative;
+	height: 750px;
+	background: #44CCEC;
+	color: rgba(0,0,0,0.5);
+
+	#map {
+		width: 50%;
+		//border-radius: 15px;
+		overflow: hidden;
+		position: absolute;
+		top:0;
+		left:0;
+		bottom:0;
+	}
+
+	.content {
+		padding-left:50px;
+		.title {
+			margin:0 0 30px;
+			font-size: 36px;
+			text-transform: uppercase;
+			.icon {
+				opacity: 0.6;
+				margin-right: 10px;
+			}
+		}
+		.list {
+			li {
+				//font-family: @font-header;
+				//text-transform: uppercase;
+				//letter-spacing: 0.5px;
+				font-size: 14px;
+				padding:10px 0;
+				font-weight: 600;
+				border-bottom: dashed rgba(0,0,0,0.1) 1px;
+				.time {
+					width: 80px;
+					display: inline-block;
+					font-weight: normal;
+					font-size: 12px;
+					opacity: 0.8;
+				}
+				&:last-child {
+					border:none;
+				}
+			}
+		}
+	}
+}
+
+#sponsors {
+	background: #fff;
+	padding:50px 0 20px;
+	border-bottom: #eee solid 1px;
+
+	.sponsor-list {
+		.col-md-4 {
+			margin-bottom: 30px;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+#cta {
+	padding: 100px;
+	h2 {
 		text-transform: uppercase;
-		letter-spacing: 0.5px;
-		line-height: 1;
-
-		a {
-			color: rgba(0,0,0,0.6);
-			font-weight: 600;
-		}
+		margin-bottom: 30px;
+		font-size: 24px;
 	}
-
-
-	//hack
-	a[href^="http://maps.google.com/maps"]{display:none !important}
-	a[href^="https://maps.google.com/maps"]{display:none !important}
-
-	.gmnoprint a, .gmnoprint span, .gm-style-cc {
-	    display:none;
+	.btn {
+		font-size: 18px;
+		padding:20px 50px;
 	}
-	.gmnoprint div {
-	    background:none !important;
+}
+
+#credits {
+	background: #eee;
+	padding:10px;
+	color: rgba(0,0,0,0.5);
+	font-family: @font-header;
+	font-weight: 500;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	line-height: 1;
+
+	a {
+		color: rgba(0,0,0,0.6);
+		font-weight: 600;
 	}
+}
+
+#new_project {
+	margin-bottom: 20px;
+}
+
+//hack
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
 }

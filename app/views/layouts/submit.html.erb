@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<%= csrf_meta_tags %>
+<title><%= yield :page_title %>JOMLaunch</title>
+<%= stylesheet_link_tag 'landing', media: 'all' %>
+<!--[if lt IE 9]>
+<script src="https://oss.mxaxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<section id="header-short">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag asset_path('jomweb-logo.svg'), alt: 'JomWeb', class: 'logo-jomweb' %>
+        <%= image_tag asset_path('jomlaunch.svg'), alt: 'JOMLaunch', class: 'logo-jomlaunch' %>
+        <%= link_to 'Utama', root_path, class: 'btn btn-jomlaunch pull-right' %>
+        <%= link_to 'Beli Tiket', 'http://evenesis.yus.com.my/Tickets.aspx?event=192c6050-b33d-457c-afc0-11616b5f0080&source=p', class: 'btn btn-warning pull-right' %>
+      </div>
+    </div>
+  </div>
+</section>
+<%= yield %>
+<section id="credits">
+  <div class="container text-center">
+  	&copy;2015 JomWeb - Komuniti Programming &amp; UI/UX<br>
+    Direka bentuk oleh <a href="https://dribbble.com/izuddinhelmi">Izuddin Helmi</a> &amp; Dibangunkan oleh <a href="http://azraai.me/">Ariff Azraai</a>
+  </div>
+</section>
+
+<%= javascript_include_tag 'submit' %>
+</body>
+</html>

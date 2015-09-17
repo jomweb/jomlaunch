@@ -1,0 +1,35 @@
+<% page_title 'Hantar Projek' %>
+
+<%= simple_form_for @project, url: submit_path do |f| %>
+	<div class="container">
+		<h2>Hantar Projek</h2>
+		<p class="lead">Hantar penyertaan anda untuk dipersembahkan pada 10 Oktober 2015!</p>
+
+		<%= field_set_tag 'Maklumat Projek' do %>
+			<div class="row">
+				<div class="col-md-4"><%= f.input :name, label: 'Nama Projek' %></div>
+				<div class="col-md-4"><%= f.input :url, label: 'URL (jika ada)' %></div>
+				<div class="col-md-4"><%= f.input :logo, as: :file, label: 'Logo Projek (jika ada)' %></div>
+			</div>
+
+			<%= f.input :description, input_html: {rows: 5}, label: 'Keterangan' %>
+		<% end %>
+
+		<%= field_set_tag 'Maklumat Pembangun' do %>
+			<div class="row">
+				<div class="col-md-4"><%= f.input :developer_name, label: 'Nama Pembangun' %></div>
+				<div class="col-md-4"><%= f.input :developer_url, label: 'URL Pembangun (jika ada)' %></div>
+			</div>
+		<% end %>
+
+		<%= field_set_tag 'Maklumat Penghantar' do %>
+			<div class="row">
+				<div class="col-md-4"><%= f.input :submitter_name, label: 'Nama Penghantar' %></div>
+				<div class="col-md-4"><%= f.input :submitter_email, label: 'Email Penghantar' %></div>
+				<div class="col-md-4"><%= f.input :submitter_phone, label: 'No. Telefon Penghantar' %></div>
+			</div>
+		<% end %>
+
+		<%= f.submit 'Hantar', class: 'btn btn-jomlaunch' %>
+	</div>
+<% end %>
