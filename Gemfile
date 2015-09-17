@@ -9,6 +9,8 @@ gem 'devise'
 gem 'transitions', :require => ['transitions', 'active_model/transitions']
 gem 'simple_form'
 gem 'cocoon'
+gem 'recaptcha', :require => 'recaptcha/rails'
+gem 'carrierwave'
 
 gem 'less-rails', '~> 2.7.0'
 gem 'coffee-rails', '~> 4.1.0'
