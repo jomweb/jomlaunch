@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <%= csrf_meta_tags %>
-<title>JomLaunch</title>
+<title>JOMLaunch</title>
 <%= stylesheet_link_tag 'landing', media: 'all' %>
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -13,8 +13,62 @@
 <![endif]-->
 </head>
 <body>
-<h1>JomLaunch</h1>
+<section id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 content text-center">
+        <%= image_tag asset_path('jomweb-logo.svg'), alt: 'JomWeb', class: 'logo' %>
+        <%= image_tag asset_path('jomlaunch.svg'), alt: 'JOMLaunch' %>
+        <h3>Merai Kepakaran Teknologi Maklumat Tempatan</h3>
+        <p>JOMLaunch adalah sebuah program yang dikelolakan oleh komuniti JOMWEB, sebuah komuniti programmer dan penggiat teknologi maklumat di Malaysia. Ianya juga bertujuan memberi inspirasi kepada programmer lain agar lebih proaktif, membina projek dan beraspirasi meraih kejayaan yang lebih tinggi di peringkat global.</p>
+        <%= link_to 'Beli Tiket', 'http://evenesis.yus.com.my/Tickets.aspx?event=192c6050-b33d-457c-afc0-11616b5f0080&source=p', class: 'btn btn-warning' %>
+        <%= link_to 'Hantar Projek', submit_path, class: 'btn btn-jomlaunch' %>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="categories">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h2>Kategori Projek</h2>
+        <p class="lead">Projek-projek di JOMLaunch akan dibahagi kepada 4 kategori</p>
+      </div>
+    </div>
+    <div class="row items">
+      <div class="col-md-3 item">
+        <div class="thumb"><%= image_tag asset_path('icon-open.svg'), alt: 'Sumber Terbuka' %></div>
+        <h4>Sumber Terbuka</h4>
+        <p>OS Project</p>
+      </div>
+      <div class="col-md-3 item">
+        <div class="thumb"><%= image_tag asset_path('icon-community.svg'), alt: 'Komuniti' %></div>
+        <h4>Komuniti</h4>
+        <p>Komuniti</p>
+      </div>
+      <div class="col-md-3 item">
+        <div class="thumb"><%= image_tag asset_path('icon-personal.svg'), alt: 'Peribadi' %></div>
+        <h4>Peribadi</h4>
+        <p>Peribadi</p>
+      </div>
+      <div class="col-md-3 item">
+        <div class="thumb"><%= image_tag asset_path('icon-commercial.svg'), alt: 'Komersial' %></div>
+        <h4>Komersial</h4>
+        <p>Komersial</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credits">
+      <div class="container text-center">
+      	&copy;2015 JomWeb - Komuniti Programming &amp; UI/UX<br>
+        Direka bentuk oleh <a href="https://dribbble.com/izuddinhelmi">Izuddin Helmi</a> &amp; Dibangunkan oleh <a href="http://azraai.me/">Ariff Azraai</a>
+      </div>
+    </section>
+
+<%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false' %>
 <%= javascript_include_tag 'landing' %>
 </body>
 </html>
