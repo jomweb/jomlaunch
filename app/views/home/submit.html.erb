@@ -5,31 +5,38 @@
 		<h2>Hantar Projek</h2>
 		<p class="lead">Hantar penyertaan anda untuk dipersembahkan pada 10 Oktober 2015!</p>
 
+		<% @project.errors[:base].each do |error| %><div class="alert alert-danger"><%= error %></div><% end %>
+
 		<%= field_set_tag 'Maklumat Projek' do %>
 			<div class="row">
-				<div class="col-md-4"><%= f.input :name, label: 'Nama Projek' %></div>
+				<div class="col-md-4"><%= f.input :name, label: 'Nama Projek', error: 'wajib diisi' %></div>
 				<div class="col-md-4"><%= f.input :url, label: 'URL (jika ada)' %></div>
-				<div class="col-md-4"><%= f.input :logo, as: :file, label: 'Logo Projek (jika ada)' %></div>
+				<div class="col-md-4"><%= f.input :category, label: 'Kategori Projek', collection: Project::CATEGORIES.invert, error: 'wajib dipilih' %></div>
 			</div>
 
-			<%= f.input :description, input_html: {rows: 5}, label: 'Keterangan' %>
+			<%= f.input :description, input_html: {rows: 5}, label: 'Keterangan', error: 'wajib diisi' %>
+
+			<div class="row">
+				<div class="col-md-4"><%= f.input :logo, as: :file, label: 'Logo Projek (jika ada)', error: 'mestilah format yang dibenarkan (jpg, gif, png)' %></div>
+			</div>
 		<% end %>
 
 		<%= field_set_tag 'Maklumat Pembangun' do %>
 			<div class="row">
-				<div class="col-md-4"><%= f.input :developer_name, label: 'Nama Pembangun' %></div>
+				<div class="col-md-4"><%= f.input :developer_name, label: 'Nama Pembangun', error: 'wajib diisi' %></div>
 				<div class="col-md-4"><%= f.input :developer_url, label: 'URL Pembangun (jika ada)' %></div>
 			</div>
 		<% end %>
 
 		<%= field_set_tag 'Maklumat Penghantar' do %>
 			<div class="row">
-				<div class="col-md-4"><%= f.input :submitter_name, label: 'Nama Penghantar' %></div>
-				<div class="col-md-4"><%= f.input :submitter_email, label: 'Email Penghantar' %></div>
-				<div class="col-md-4"><%= f.input :submitter_phone, label: 'No. Telefon Penghantar' %></div>
+				<div class="col-md-4"><%= f.input :submitter_name, label: 'Nama Penghantar', error: 'wajib diisi' %></div>
+				<div class="col-md-4"><%= f.input :submitter_email, label: 'Email Penghantar', error: 'wajib diisi' %></div>
+				<div class="col-md-4"><%= f.input :submitter_phone, label: 'No. Telefon Penghantar', error: 'wajib diisi' %></div>
 			</div>
 		<% end %>
 
+		<%= recaptcha_tags hl: :ms %>
 		<%= f.submit 'Hantar', class: 'btn btn-jomlaunch' %>
 	</div>
 <% end %>

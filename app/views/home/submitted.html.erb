@@ -1,0 +1,31 @@
+<% page_title 'Projek Diterima' %>
+
+<div class="container">
+	<h2>Projek Diterima</h2>
+	<p class="lead">Penyertaan anda sedang dipertimbangkan. Pihak JomWeb akan menghubungi anda sekiranya terpilih.</p>
+</div>
+
+<section id="cta">
+  <div class="container text-center">
+    <h2>Bersama Membangunkan Bidang Teknologi Maklumat Tempatan!</h2>
+    <%= link_to 'Beli Tiket', 'http://evenesis.yus.com.my/Tickets.aspx?event=192c6050-b33d-457c-afc0-11616b5f0080&source=p', class: 'btn btn-warning' %>
+  </div>
+</section>
+
+<section id="sponsors">
+  <div class="container">
+    <div class="col-md-3"><h2>Penaja &amp; Penyokong</h2></div>
+    <div class="col-md-9 sponsor-list">
+      <div class="col-md-4">
+      	<%= link_to image_tag(asset_path('sponsor-finas.jpg'), alt: 'FINAS'), 'http://pitchingcentre.com.my' %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to image_tag(asset_path('sponsor-nef.jpg'), alt: 'NEF'), 'http://www.nef.org.my' %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to image_tag(asset_path('sponsor-evenesis.png'), alt: 'evenesis'), 'https://www.evenesis.com' %>
+      </div>
+    </div>
+  </div>
+</section>
+
