@@ -19,8 +19,11 @@
       <div class="col-md-8 col-md-offset-2 content text-center">
         <%= image_tag asset_path('jomweb-logo.svg'), alt: 'JomWeb', class: 'logo' %>
         <%= image_tag asset_path('jomlaunch.svg'), alt: 'JOMLaunch' %>
-        <h3>Merai Kepakaran Teknologi Maklumat Tempatan</h3>
-        <p>JOMLaunch adalah sebuah program yang dikelolakan oleh komuniti JOMWEB, sebuah komuniti programmer dan penggiat teknologi maklumat di Malaysia. Ianya juga bertujuan memberi inspirasi kepada programmer lain agar lebih proaktif, membina projek dan beraspirasi meraih kejayaan yang lebih tinggi di peringkat global.</p>
+        <h3>
+        	10 Oktober 2015, 8.30 pagi - 5.00 petang<br>
+        	Malaysian Content Pitching Center, KL Sentral
+        </h3>
+        <p>JOMLaunch adalah sebuah program yang dikelolakan oleh komuniti JOMWEB, sebuah komuniti programmer dan penggiat teknologi maklumat di Malaysia bagi merai kepakaran teknologi maklumat tempatan. Ianya juga bertujuan memberi inspirasi kepada programmer lain agar lebih proaktif, membina projek dan beraspirasi meraih kejayaan yang lebih tinggi di peringkat global.</p>
         <%= link_to 'Beli Tiket', 'http://evenesis.yus.com.my/Tickets.aspx?event=192c6050-b33d-457c-afc0-11616b5f0080&source=p', class: 'btn btn-warning' %>
         <%= link_to 'Hantar Projek', submit_path, class: 'btn btn-jomlaunch' %>
       </div>
@@ -61,12 +64,59 @@
   </div>
 </section>
 
-<section id="credits">
-      <div class="container text-center">
-      	&copy;2015 JomWeb - Komuniti Programming &amp; UI/UX<br>
-        Direka bentuk oleh <a href="https://dribbble.com/izuddinhelmi">Izuddin Helmi</a> &amp; Dibangunkan oleh <a href="http://azraai.me/">Ariff Azraai</a>
+<section id="program">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6 content">
+        <h3 class="title"><%= image_tag asset_path('icon-notebook.png'), class: 'icon' %>Atur Cara Program</h3>
+        <ul class="list-unstyled list">
+          <li><span class="time">8:30 am</span>Pendaftaran</li>
+          <li><span class="time">9:00 am</span>Ucapan Aluan</li>
+          <li><span class="time">09:15 am</span>Pembentangan Projek - Slot 1</li>
+          <li><span class="time">10:15 am</span>Sembang Teknologi #1</li>
+          <li><span class="time">10:45 am</span>Pembentangan Projek - Slot 2</li>
+          <li><span class="time">11:45 am</span>Sembang Teknologi #2</li>
+          <li><span class="time">12:15 am</span>Pembentangan Projek - Slot 3</li>
+          <li><span class="time">13:15 am</span>Makan Tengahari</li>
+          <li><span class="time">14:15 am</span>Pembentangan Projek - Slot 4</li>
+          <li><span class="time">15:15 am</span>Sembang Teknologi #3</li>
+          <li><span class="time">15:45 am</span>Pembentangan Projek - Slot 5</li>
+          <li><span class="time">16:45 am</span>Sesi Penutup</li>
+          </div>
       </div>
-    </section>
+    </div>
+  </div>
+  <div id="map"></div>
+</section>
+
+<section id="sponsors">
+  <div class="container">
+    <div class="col-md-3"><h2>Penaja &amp; Penyokong</h2></div>
+    <div class="col-md-9 sponsor-list">
+      <div class="col-md-4">
+      	<%= link_to image_tag(asset_path('sponsor-finas.jpg'), alt: 'FINAS'), 'http://pitchingcentre.com.my' %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to image_tag(asset_path('sponsor-nef.jpg'), alt: 'NEF'), 'http://www.nef.org.my/' %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container text-center">
+    <h2>Bersama Membangunkan Bidang Teknologi Maklumat Tempatan!</h2>
+    <%= link_to 'Beli Tiket', 'http://evenesis.yus.com.my/Tickets.aspx?event=192c6050-b33d-457c-afc0-11616b5f0080&source=p', class: 'btn btn-warning' %>
+    <%= link_to 'Hantar Projek', submit_path, class: 'btn btn-jomlaunch' %>
+  </div>
+</section>
+
+<section id="credits">
+  <div class="container text-center">
+  	&copy;2015 JomWeb - Komuniti Programming &amp; UI/UX<br>
+    Direka bentuk oleh <a href="https://dribbble.com/izuddinhelmi">Izuddin Helmi</a> &amp; Dibangunkan oleh <a href="http://azraai.me/">Ariff Azraai</a>
+  </div>
+</section>
 
 <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false' %>
 <%= javascript_include_tag 'landing' %>
