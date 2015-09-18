@@ -68,6 +68,8 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    humane-rails (5.1.0)
+      rails (>= 3.2.0)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -171,6 +173,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   devise
+  humane-rails
   jbuilder (~> 2.0)
   jquery-rails
   less-rails (~> 2.7.0)
