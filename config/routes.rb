@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :project, except: :destroy do
-  	put :trash, on: :member
-  end
+  resources :projects, except: :destroy
   resources :users, except: :destroy
   get 'account', to: 'account#edit',	as: :account
   put 'account', to: 'account#update'

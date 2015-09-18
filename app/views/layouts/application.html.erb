@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <%= csrf_meta_tags %>
-<title>JomLaunch</title>
+<title><%= yield :page_title %><%= t 'app.name' %></title>
 <%= stylesheet_link_tag 'application', media: 'all' %>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -26,11 +26,13 @@
       <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
+      <% if user_signed_in? %>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#"></a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><%= link_to t('.nav.projects'), projects_path %></li>
+        <li><%= link_to t('.nav.users'), users_path %></li>
+        <li class="navbar-right"><%= link_to t('.nav.sign_out'), destroy_user_session_path, method: :delete %></li>
       </ul>
+      <% end %>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
@@ -40,5 +42,6 @@
 </div>
 
 <%= javascript_include_tag 'application' %>
+<%= raw humane_flash_messages %>
 </body>
 </html>
