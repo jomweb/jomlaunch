@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
     'open-source' => 'Sumber Terbuka',
     'community'   => 'Komuniti',
     'personal'    => 'Peribadi',
-    'commercial'  => 'Komersial'
+    'commercial'  => 'Komersil'
   }
 
   validates :name, :description,
