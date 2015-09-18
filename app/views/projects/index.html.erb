@@ -1,0 +1,32 @@
+<h1 class="page-header"><%= t '.title' %></h1>
+
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th><%= t '.table.name' %></th>
+			<th><%= t '.table.developer_name' %></th>
+			<th><%= t '.table.category' %></th>
+			<th><%= t '.table.submitter_name' %></th>
+			<th><%= t '.table.submitter_email' %></th>
+			<th><%= t '.table.submitter_phone' %></th>
+		</tr>
+	</thead>
+	<tbody>
+	<% if @projects.size > 0 %>
+	<% @projects.each do |project| %>
+		<tr>
+			<td><%= project.name %></td>
+			<td><%= project.developer_name %></td>
+			<td><%= Project::CATEGORIES[project.category] %></td>
+			<td><%= project.submitter_name %></td>
+			<td><%= project.submitter_email %></td>
+			<td><%= project.submitter_phone %></td>
+		</tr>
+	<% end %>
+	<% else %>
+		<tr>
+			<td class="text-center" colspan="6"><%= t '.empty' %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

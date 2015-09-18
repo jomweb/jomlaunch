@@ -5,3 +5,6 @@ en:
     sessions:
       new:
         title: Sign In
+  projects:
+    index:
+      title: All Projects
