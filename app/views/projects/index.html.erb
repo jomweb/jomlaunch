@@ -10,7 +10,7 @@
 	<span class="label label-success"><%= Project::CATEGORIES[project.category] %></span>
 	<h1>
 		<%= project.name %>
-		<% if project.url %><small><%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-new-window'), ensure_url(project.url) %></small><% end %>
+		<% if project.url.present? %><small><%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-new-window'), ensure_url(project.url) %></small><% end %>
 	</h1>
 	<p class="description"><%= project.description %></p>
 	<p class="developers meta"><span><%= t '.developers' %></span> <%= h developers_string(project.developers) %></p>
