@@ -3,6 +3,7 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
+			<th><%= t '.table.index' %></th>
 			<th><%= t '.table.name' %></th>
 			<th><%= t '.table.developer_name' %></th>
 			<th><%= t '.table.category' %></th>
@@ -13,8 +14,9 @@
 	</thead>
 	<tbody>
 	<% if @projects.size > 0 %>
-	<% @projects.each do |project| %>
+	<% @projects.each_with_index do |project, index| %>
 		<tr>
+			<td><%= index+1 %></td>
 			<td><%= project.name %></td>
 			<td><%= project.developer_name %></td>
 			<td><%= Project::CATEGORIES[project.category] %></td>
