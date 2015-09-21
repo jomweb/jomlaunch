@@ -17,6 +17,6 @@ module ApplicationHelper
         arrays << link_to(key, ensure_url(value))
       end
     end
-    arrays.join(', ')
+    arrays.join(', ').html_safe
   end
 end

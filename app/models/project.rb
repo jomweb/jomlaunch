@@ -26,14 +26,14 @@ class Project < ActiveRecord::Base
     developer_name.split(',').map(&:strip)
   end
 
-  def developers_urls
+  def developer_urls
     developer_url.split(',').map(&:strip)
   end
 
   def developers
     hash = Hash.new
     developer_names.each_with_index do |name, index|
-      hash[name] = developers_urls.include?(index) ? developers_urls[index] : ''
+      hash[name] = developer_urls[index].blank? ? '' : developer_urls[index]
     end
     hash
   end
