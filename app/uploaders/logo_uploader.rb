@@ -16,6 +16,6 @@ class LogoUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*args)
-    ActionController::Base.helpers.asset_path([version_name, "jomweb-logo.svg"].compact.join('_'))
+    ActionController::Base.helpers.asset_path("jomweb-logo.svg")
   end
 end
