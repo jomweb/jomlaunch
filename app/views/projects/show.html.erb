@@ -1,0 +1,15 @@
+<% page_title [@project.name, t('.title')].join(' | ') %>
+
+<div class="container">
+	<div class="project-container">
+		<%= image_tag @project.logo.thumb.url, class: 'logo', alt: @project.name %>
+		<span class="label label-success"><%= Project::CATEGORIES[@project.category] %></span>
+		<h1>
+			<%= @project.name %>
+			<% if @project.url %><small><%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-new-window'), ensure_url(@project.url) %></small><% end %>
+		</h1>
+		<p class="description"><%= @project.description %></p>
+		<p class="developers meta"><span><%= t '.developers' %></span> <%= developers_string(@project.developers) %></p>
+		<p class="submitter meta"><span><%= t '.submitter' %></span> <%= @project.submitter_name %> &lt;<%= @project.submitter_email %>&gt; (<%= @project.submitter_phone %>)</p>
+	</div>
+</div>

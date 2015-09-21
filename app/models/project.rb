@@ -21,4 +21,20 @@ class Project < ActiveRecord::Base
     state :submitted
     state :selected
   end
+
+  def developer_names
+    developer_name.split(',').map(&:strip)
+  end
+
+  def developers_urls
+    developer_url.split(',').map(&:strip)
+  end
+
+  def developers
+    hash = Hash.new
+    developer_names.each_with_index do |name, index|
+      hash[name] = developers_urls.include?(index) ? developers_urls[index] : ''
+    end
+    hash
+  end
 end

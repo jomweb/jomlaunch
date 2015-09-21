@@ -8,3 +8,9 @@ en:
   projects:
     index:
       title: All Projects
+      table:
+        index: No.
+    show:
+      title: View Project
+      developers: Developer(s)
+      submitter: Submitted By

@@ -1,3 +1,4 @@
+<% page_title t('.title') %>
 <h1 class="page-header"><%= t '.title' %></h1>
 
 <table class="table table-bordered table-striped">
@@ -10,6 +11,7 @@
 			<th><%= t '.table.submitter_name' %></th>
 			<th><%= t '.table.submitter_email' %></th>
 			<th><%= t '.table.submitter_phone' %></th>
+			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,6 +25,7 @@
 			<td><%= project.submitter_name %></td>
 			<td><%= project.submitter_email %></td>
 			<td><%= project.submitter_phone %></td>
+			<td><%= link_to t('.table.view'), project_path(project), class: 'btn btn-xs btn-primary' %></td>
 		</tr>
 	<% end %>
 	<% else %>
