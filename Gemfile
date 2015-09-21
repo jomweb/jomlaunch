@@ -10,6 +10,7 @@ gem 'transitions', :require => ['transitions', 'active_model/transitions']
 gem 'simple_form'
 gem 'cocoon'
 gem 'recaptcha', :require => 'recaptcha/rails'
+gem 'mini_magick'
 gem 'carrierwave'
 
 gem 'less-rails', '~> 2.7.0'
