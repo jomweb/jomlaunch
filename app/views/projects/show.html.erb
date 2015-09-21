@@ -2,7 +2,11 @@
 
 <div class="container">
 	<div class="project-container">
-		<%= image_tag @project.logo.thumb.url, class: 'logo', alt: @project.name %>
+		<% if @project.logo.present? %>
+			<%= link_to image_tag(@project.logo.thumb.url, class: 'logo', alt: @project.name), @project.logo.url, target: '_blank' %>
+		<% else %>
+			<%= image_tag @project.logo.thumb.url, class: 'logo', alt: @project.name %>
+		<% end %>
 		<span class="label label-success"><%= Project::CATEGORIES[@project.category] %></span>
 		<h1>
 			<%= @project.name %>
