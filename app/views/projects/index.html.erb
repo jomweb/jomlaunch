@@ -1,37 +1,19 @@
 <% page_title t('.title') %>
-<h1 class="page-header"><%= t '.title' %></h1>
-
-<table class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th><%= t '.table.index' %></th>
-			<th><%= t '.table.name' %></th>
-			<th><%= t '.table.developer_name' %></th>
-			<th><%= t '.table.category' %></th>
-			<th><%= t '.table.submitter_name' %></th>
-			<th><%= t '.table.submitter_email' %></th>
-			<th><%= t '.table.submitter_phone' %></th>
-			<th>&nbsp;</th>
-		</tr>
-	</thead>
-	<tbody>
-	<% if @projects.size > 0 %>
-	<% @projects.each_with_index do |project, index| %>
-		<tr>
-			<td><%= index+1 %></td>
-			<td><%= project.name %></td>
-			<td><%= project.developer_name %></td>
-			<td><%= Project::CATEGORIES[project.category] %></td>
-			<td><%= project.submitter_name %></td>
-			<td><%= project.submitter_email %></td>
-			<td><%= project.submitter_phone %></td>
-			<td><%= link_to t('.table.view'), project_path(project), class: 'btn btn-xs btn-primary' %></td>
-		</tr>
-	<% end %>
+<% @projects.each_with_index do |project, index| %>
+<div class="project-container">
+	<% if project.logo.present? %>
+		<%= link_to image_tag(project.logo.thumb.url, class: 'logo', alt: project.name), project.logo.url, target: '_blank' %>
 	<% else %>
-		<tr>
-			<td class="text-center" colspan="6"><%= t '.empty' %></td>
-		</tr>
+		<%= image_tag project.logo.thumb.url, class: 'logo', alt: project.name %>
 	<% end %>
-	</tbody>
-</table>
+	<span class="count">#<%= index+1 %></span>
+	<span class="label label-success"><%= Project::CATEGORIES[project.category] %></span>
+	<h1>
+		<%= project.name %>
+		<% if project.url %><small><%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-new-window'), ensure_url(project.url) %></small><% end %>
+	</h1>
+	<p class="description"><%= project.description %></p>
+	<p class="developers meta"><span><%= t '.developers' %></span> <%= h developers_string(project.developers) %></p>
+	<p class="submitter meta"><span><%= t '.submitter' %></span> <%= project.submitter_name %> &lt;<%= project.submitter_email %>&gt; (<%= project.submitter_phone %>)</p>
+</div>
+<% end %>
